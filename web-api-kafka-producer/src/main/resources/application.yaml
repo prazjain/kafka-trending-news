@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: web-api-kafka-producer
+  kafka:
+    #need to this give bootstrapserver as we have enabled auto topic creation
+    bootstrap-servers:
+      - kafka:9092
+    producer:
+      bootstrap-servers: kafka:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
